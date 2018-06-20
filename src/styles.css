@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Muli:400,800');
+
+button {
+  border-radius: 20px !important;
+  height: 75px;
+}
+
+input:focus {
+  outline:none !important;
+}
+
+.primaryText {
+  font-family: 'Muli', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  z-index: 99;
+}
+
+.footerActionCard {
+  z-index: 99;
+  box-shadow: 2px -11px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.floatingInput {
+  border-bottom: 2px solid #ffc107;
+  border-radius: 0;
+  padding-left: 0;
+  outline: none !important;
+}
+
+.floatingInput:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.backActionIcon {
+  left: 20px !important;
+  position: fixed;
+  top: 20px !important;
+}
+/*==========  Mobile First Media Queries  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
