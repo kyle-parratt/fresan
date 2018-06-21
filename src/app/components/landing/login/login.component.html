@@ -1,0 +1,129 @@
+<!-- View Container -->
+<div class="d-flex position-absolute w-100 h-100 mh-100 mw-100 justify-content-center">
+
+  <!-- Navigation -->
+  <div class="fixed-top">
+    <div class="d-flex flex-row">
+        <div class="w-100" *ngIf="!userHasEnteredInput">
+          <h1 (click)="navigateBackwards()" class="primaryText text-center m-auto p-2 backActionIcon"><i class="fas fa-arrow-left"></i> Login</h1>
+        </div>
+    </div>
+  </div>
+  <!-- Navigation End -->
+
+  <!-- Login Form -->
+  <div class="card w-75 m-auto border-0">
+    <div class="d-flex viewPromptText">
+      <div class="w-100" *ngIf="!hidePrompt">
+        <h1 class="primaryTextLg text-left m-auto">Welcome Back!</h1>
+        <small class="text-muted text-left m-auto">Log in to your account</small>
+      </div>
+    </div>
+    <form>
+
+      <!-- Username Input -->
+      <div class="form-group">
+        <label class="sr-only" for="inlineFormInputGroupUsername">USERNAME</label>
+        <div class="input-group floatingInput">
+          <input #usernameEditRef (focus)="userIconToggleState()" (blur)="userIconToggleState()" type="text" style="border: none !important; box-shadow: none !important; padding-left: 0" class="primaryText form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+          <div class="input-group-prepend" style="border: none">
+            <div class="input-group-text" style="border: none; background-color: transparent"><i class="fas fa-user" [@userIconToggle]="userIconToggledState"></i></div>
+          </div>
+        </div>
+      </div>
+      <!-- Username Input End -->
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <label class="sr-only" for="inlineFormInputGroupPassword">PASSWORD</label>
+        <div class="input-group floatingInput">
+          <input #passwordEditRef (focus)="passwordIconToggleState()" (blur)="passwordIconToggleState()" [type]="passwordState" style="border: none !important; box-shadow: none !important; padding-left: 0" class="primaryText form-control" id="inlineFormInputGroupPassword" placeholder="Password">
+          <div class="input-group-prepend" style="border: none">
+            <div class="input-group-text" style="border: none; background-color: transparent" (click)="changePasswordVisibility()">
+              <i class="fas fa-eye-slash" *ngIf="!passwordIsVisible" [@passwordIconToggle]="passwordIconToggledState"></i>
+              <i class="fas fa-eye" *ngIf="passwordIsVisible" [@passwordIconToggle]="passwordIconToggledState"></i>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <br><small id="emailHelp" class="form-text text-muted"><i class="fas fa-unlock-alt"></i> Forgot Password?</small>
+        </div>
+      </div>
+      <!-- Password Input End -->
+    </form>
+  </div>
+  <!-- Login Form End -->
+
+  <!-- Footer Actions -->
+  <div class="fixed-bottom footerActionCard">
+    <div class="d-flex bd-highlight">
+      <div class="flex-fill bd-highlight" *ngIf="!isLoggingOn">
+        <button  routerLink="/login" (click)="onLoginSubmit()" type="button" class="primaryText btn btnGold w-100 rounded-0" style="color: white">LOGIN</button>
+      </div>
+      <div class="flex-fill bd-highlight" *ngIf="isLoggingOn">
+        <button  routerLink="/login" (click)="isLoggingOn()" type="button" class="primaryText btn btnGold w-100 rounded-0" style="color: white">LOGIN   <i class="fas fa-spinner fa-pulse"></i></button>
+      </div>
+      <div class="flex-fill bd-highlight" >
+        <div class="d-flex bd-highlight">
+          <button (click)="onLoginSubmit()" type="button" class="primaryText btn w-100 rounded-0 btnBlue"><i class="fab fa-facebook-f"></i></button>
+          <button (click)="onLoginSubmit()" type="button" class="primaryText btn w-100 rounded-0 btnPink"><i class="fab fa-google"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Actions End -->
+</div>
+<!-- View Container End -->
+
+
+<!-- Modal Popup -->
+<div class="modalPopup h-100 w-100" *appModalPopup="!userHasEnteredInput">
+
+  <!-- Modal Background -->
+  <section class="pen">
+    <div class="panel top">
+    </div>
+    <div class="panel bottom">
+      <div class="scroll"></div>
+    </div>
+  </section>
+  <!-- Modal Background End -->
+
+  <!-- Modal Popup Body-->
+  <div class="d-flex align-items-center h-100 w-100 justify-content-center">
+      <div class="card footerActionCard w-75" style="border: none !important;">
+
+        <!-- Modal Popup Content -->
+        <div class="card-body text-center">
+          <div class="d-flex justify-content-center">
+            <i class="fas fa-exclamation-circle modalPopupIcon"></i>
+          </div>
+          <h1 class="primaryTextLg">Are you sure?</h1>
+          <hr class="btnGold w-50">
+          <p class="text-muted">
+            You are about navigate away from this page and all data will be lost.
+          </p>
+        </div>
+        <!-- Modal Popup Content End -->
+
+        <!-- Modal Popup Actions -->
+          <div class="d-flex ">
+            <div class="flex-fill ">
+              <button  routerLink="/landing" (click)="onLoginSubmit()" type="button" class="primaryText btn btnGold w-100 rounded-0" style="color: white">OK</button>
+            </div>
+            <div class="flex-fill ">
+              <button (click)="onCloseModal()" type="button" class="primaryText btn btnBlue w-100 rounded-0" style="color: white">CANCEL</button>
+            </div>
+          </div>
+        <!-- Modal Popup Actions End -->
+      </div>
+    </div>
+  <!-- Modal Popup Body End -->
+</div>
+<!-- Modal Popup End -->
+
+
+
+
+
+
