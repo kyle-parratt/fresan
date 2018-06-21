@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
 import { UserProfileComponent } from './components/utilities/user-profile/user-profile.component';
 import { UserConnectionsComponent } from './components/utilities/user-connections/user-connections.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ModalPopupDirective } from './directives/modal-popup.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     OnboardingComponent,
     DashboardComponent,
     UserProfileComponent,
-    UserConnectionsComponent
+    UserConnectionsComponent,
+    ModalPopupDirective
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
+/* ======== Imports ======== */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css?family=Muli:400,800');
+
+/* ======== Basic Components ======== */
 
 button {
   border-radius: 20px !important;
@@ -10,20 +13,8 @@ input:focus {
   outline:none !important;
 }
 
-.primaryText {
-  font-family: 'Muli', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  z-index: 99;
-}
-
-.footerActionCard {
-  z-index: 99;
-  box-shadow: 2px -11px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
 .floatingInput {
-  border-bottom: 2px solid #ffc107;
+  border-bottom: 1px solid #fed418;
   border-radius: 0;
   padding-left: 0;
   outline: none !important;
@@ -34,11 +25,162 @@ input:focus {
   box-shadow: none !important;
 }
 
+/* ======== Button Styles ======== */
+
+.footerActionCard {
+  z-index: 99;
+  box-shadow: 2px -11px 28px rgba(0,0,0,0.25),
+  0 10px 10px rgba(0,0,0,0.22);
+}
+
 .backActionIcon {
   left: 20px !important;
   position: fixed;
+  outline: none !important;
   top: 20px !important;
 }
+
+.btnGold {
+  background-color: #fed418;
+  border-color: #fed418;
+  color: white;
+}
+
+.btnPink {
+  background-color: #ff61c0;
+  border-color: #ff61c0;
+  color: white;
+}
+
+.btnBlue {
+  background-color: #03c7db;
+  border-color: #03c7db;
+  color: white;
+}
+
+/* ======== Modal Popups ======== */
+
+.modalPopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 999;
+}
+
+.modalPopupIcon {
+  font-size: 65px;
+  margin-bottom: 25px;
+  color: #ff61c0;
+}
+
+/* ======== Text ======== */
+
+.primaryText {
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  z-index: 99;
+}
+
+.primaryTextLg {
+  font-family: 'Muli', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  z-index: 99;
+}
+
+.viewPromptText {
+  position: relative;
+  bottom: 35px;
+}
+
+
+/* ======== Background Animation ======== */
+
+@-webkit-keyframes scrollBad {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -320px;
+  }
+}
+@keyframes scrollBad {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -320px;
+  }
+}
+@-webkit-keyframes scrollGood {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, -320px, 0);
+    transform: translate3d(0, -320px, 0);
+  }
+}
+@keyframes scrollGood {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, -320px, 0);
+    transform: translate3d(0, -320px, 0);
+  }
+}
+.pen {
+  background-color: #fed418;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.panel {
+  padding: 3rem;
+  height: 50%;
+}
+
+.top {
+  background-color: #fed418;
+  background-image: url(http://scarbroughstudios.com/img/codepen.svg);
+  background-position: center center;
+  background-size: 500px;
+  -webkit-animation: scrollBad 5s linear infinite;
+  animation: scrollBad 5s linear infinite;
+  OPACITY: 0.5;
+}
+
+.bottom {
+  background-color: #fed418;
+  overflow: hidden;
+  OPACITY: 0.5;
+  position: relative;
+}
+.bottom .scroll {
+  background-image: url(http://scarbroughstudios.com/img/codepen.svg);
+  background-position: center center;
+  background-size: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400%;
+  width: 100%;
+  z-index: 1;
+  -webkit-animation: scrollGood 5s linear infinite;
+  animation: scrollGood 5s linear infinite;
+}
+
+
+
+
 /*==========  Mobile First Media Queries  ==========*/
 
 /* Custom, iPhone Retina */
